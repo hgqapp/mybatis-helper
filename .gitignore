@@ -1,0 +1,9 @@
+### IntelliJ IDEA ###
+
+.idea/
+.gradle/
+*.iml
+
+out/
+build/
+idea-sandbox

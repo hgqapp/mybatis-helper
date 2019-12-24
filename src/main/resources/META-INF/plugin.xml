@@ -1,0 +1,38 @@
+<idea-plugin>
+    <id>com.hgqapp.mybatis</id>
+    <name>mybatis-helper</name>
+    <vendor email="309259716@qq.com" url="https://github.com/hgqapp/MybatisPlugin">houapp</vendor>
+
+    <description><![CDATA[
+    Mabatis Helper:
+    generator
+    helper
+        Mabatis Helper:
+    generator
+    helper
+        Mabatis Helper:
+    generator
+    helper
+        Mabatis Helper:
+    generator
+    helper
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.database</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <group id="MybatisGeneratorPopupMenu"
+               class="com.hgqapp.mybatis.generator.actions.MainActionGroup" text="MyBatis Generator" popup="true"
+               description="MyBatis mapper and entity generator">
+            <add-to-group group-id="DatabaseViewPopupMenu" anchor="first"/>
+        </group>
+    </actions>
+</idea-plugin>

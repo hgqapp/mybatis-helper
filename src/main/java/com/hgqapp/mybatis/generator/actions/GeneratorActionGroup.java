@@ -1,8 +1,8 @@
 package com.hgqapp.mybatis.generator.actions;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
  * @version 1.0.0
  * @since 2019/12/24 13:04
  */
-public class MainActionGroup extends ActionGroup {
+public class GeneratorActionGroup extends DefaultActionGroup {
 
 
     @NotNull

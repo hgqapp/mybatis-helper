@@ -29,10 +29,10 @@
 
     <actions>
         <!-- Add your actions here -->
-        <group id="MybatisGeneratorPopupMenu"
-               class="com.hgqapp.mybatis.generator.actions.MainActionGroup" text="MyBatis Generator" popup="true"
+        <action id="MybatisHelper.GeneratorAction"
+               class="com.hgqapp.mybatis.generator.actions.GeneratorAction" text="MyBatis Generator"
                description="MyBatis mapper and entity generator">
-            <add-to-group group-id="DatabaseViewPopupMenu" anchor="first"/>
-        </group>
+            <add-to-group group-id="DatabaseViewPopupMenu" anchor="before" relative-to-action="DatabaseView.Tools"/>
+        </action>
     </actions>
 </idea-plugin>

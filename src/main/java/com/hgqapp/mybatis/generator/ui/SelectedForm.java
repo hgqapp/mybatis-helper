@@ -9,12 +9,20 @@ import javax.swing.*;
  */
 public class SelectedForm {
     private JPanel container;
-    private JButton button1;
-    private JButton button2;
-    private JComboBox cboModule;
-    private JTextField txtPackage;
+    private JButton cancelButton;
+    private JButton okButton;
+    private JTextField txtMapper;
     private JLabel lblModule;
-    private JLabel lblPackage;
-    private JButton chooseButton;
-    private JButton chooseButton1;
+    private JLabel lblMapper;
+    private JButton chsModel;
+    private JButton chsMapper;
+    private JTextField txtModel;
+
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("SelectedForm");
+        frame.setContentPane(new SelectedForm().container);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+    }
 }

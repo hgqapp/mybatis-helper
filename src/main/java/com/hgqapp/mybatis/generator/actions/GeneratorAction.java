@@ -1,11 +1,19 @@
 package com.hgqapp.mybatis.generator.actions;
 
+import com.hgqapp.mybatis.generator.ui.MybatisGeneratorDialog;
 import com.intellij.database.psi.DbTableImpl;
+import com.intellij.dvcs.DvcsUtil;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.actionSystem.Presentation;
+import com.intellij.openapi.application.AccessToken;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.vcs.VcsNotifier;
+import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.NotNull;
 
@@ -41,7 +49,16 @@ public class GeneratorAction extends AnAction {
 
     @Override
     public void actionPerformed(AnActionEvent e) {
-        // Messages.showMessageDialog(project, selectedElement.getClass().getName(), presentation.getDescription(), Messages.getInformationIcon());
-
+        Project project = e.getProject();
+        MybatisGeneratorDialog dialog = new MybatisGeneratorDialog(project);
+        if (!dialog.showAndGet()) {
+            return;
+        }
+        new Task.Backgroundable(project, "xxxx", false) {
+            @Override
+            public void run(@NotNull ProgressIndicator indicator) {
+                dialog.handle();
+            }
+        }.queue();
     }
 }
